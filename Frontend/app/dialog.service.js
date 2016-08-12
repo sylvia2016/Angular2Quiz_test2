@@ -9,25 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var dialog_service_1 = require('./dialog.service');
-var AppComponent = (function () {
-    function AppComponent() {
+/**
+ * Async modal dialog service
+ * DialogService makes this app easier to test by faking this service.
+ * TODO: better modal implemenation that doesn't use window.confirm
+ */
+var DialogService = (function () {
+    function DialogService() {
     }
-    AppComponent.prototype.ngOnInit = function () {
+    /**
+     * Ask user to confirm an action. `message` explains the action and choices.
+     * Returns promise resolving to `true`=confirm or `false`=cancel
+     * Ovservable
+     */
+    DialogService.prototype.confirm = function (message) {
+        return new Promise(function (resolve, reject) {
+            return resolve(window.confirm(message || 'Is it OK?'));
+        });
     };
-    AppComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'my-app',
-            templateUrl: 'app.component.html',
-            //template: '<h1>My First Angular 2 App</h1><app-sample></app-sample>',
-            providers: [dialog_service_1.DialogService],
-            directives: [router_1.ROUTER_DIRECTIVES]
-        }), 
+    ;
+    DialogService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], DialogService);
+    return DialogService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.DialogService = DialogService;
+//# sourceMappingURL=dialog.service.js.map

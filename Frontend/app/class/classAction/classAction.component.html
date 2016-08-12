@@ -1,0 +1,23 @@
+﻿<!--<p>
+    classAction works!
+</p>-->
+
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+    <h2 *ngIf="!isModify">新增類別</h2>
+    <h2 *ngIf="isModify">修改類別</h2>
+    <table>
+        <tr>
+            <td>
+                名稱：<input id="Text1" class="form-control" type="text" [(ngModel)]="model.Name" name="Name" required/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input id="Submit1" class="btn btn-primary" type="submit" value="儲存" />
+                <input *ngIf="isModify" id="Button2" class="btn btn-danger" type="button" value="刪除" (click)="deleteClass()" />
+                <input id="Button1" class="btn btn-default" type="button" value="取消" (click)="cancelGo('classList')" />
+            </td>
+        </tr>
+
+    </table>
+</form>

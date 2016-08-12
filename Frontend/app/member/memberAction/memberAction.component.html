@@ -1,0 +1,36 @@
+﻿<!--<p>
+    memberAction works!
+</p>-->
+
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+    <h3 *ngIf="!isModify">新增通訊錄</h3>
+    <h3 *ngIf="isModify">修改通訊錄</h3>
+    <br />
+    類別：
+    <label class="form-control" style="background-color:hsla(0, 0%, 71%, 0.46)">{{aryClass.Name}}</label>
+    <!--<input id="Hidden1" type="hidden" [(ngModel)]="model.ClassId" name="ClassId" />-->
+    <!--<input id="Text6" class="form-control" type="text" disabled="disabled" value="{{aryClass.ClassId}}" name="ClassId" />-->
+    <br />
+    姓名：
+    <input id="Text1" class="form-control" type="text" placeholder="姓名" [(ngModel)]="model.Name" name="Name"/>
+    <br />
+    性別：
+    <select id="Select1" class="form-control" [(ngModel)]="model.Sex" name="Sex">
+        <option value="0">男</option>
+        <option value="1">女</option>
+    </select>
+    <br />
+    Email：
+    <input id="Text3" class="form-control" type="text" placeholder="Email" [(ngModel)]="model.Email" name="Email" />
+    <br />
+    電話：
+    <input id="Text4" class="form-control" type="text" placeholder="電話" [(ngModel)]="model.Phone" name="Phone" />
+    <br />
+    地址：
+    <input id="Text5" class="form-control" type="text" placeholder="地址" [(ngModel)]="model.Address" name="Address" />
+    <br />
+
+    <input id="Submit1" class="btn btn-primary" type="submit" value="儲存" />
+    <input *ngIf="isModify" id="Button2" class="btn btn-danger" type="button" value="刪除" (click)="deleteMember()" />
+    <input id="Button1" class="btn btn-default" type="button" value="取消" (click)="go('')" />
+</form>

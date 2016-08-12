@@ -1,0 +1,54 @@
+﻿<!--<p>
+    classList
+</p>-->
+
+<h2>類別維護</h2>
+<table>
+    <tr>
+        <td>
+            <input id="Button3" class="btn btn-default" type="button" value="返回" (click)="go('memberRoot')" />
+            <input id="Button4" class="btn btn-primary" type="button" value="新增" (click)="go('classAction')" />
+        </td>
+        <td></td>
+    </tr>
+</table>
+
+<br/>
+
+<div>
+    <button *ngFor="let class of aryClass"
+            (click)="modify(class)"
+            class="list-group-item">
+        {{class.Name}}
+    </button>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!--<ul class="list-group">
+    <li *ngFor="let class of aryClass"
+        (click)="modify(class)"
+        class="list-group-item">
+        {{class.Name}}
+    </li>
+</ul>-->
+
+<!--<table class="table">
+    <tr>
+        <td>名稱</td>
+        <td></td>
+    </tr>
+    <tr *ngFor="let class of aryClass">
+        <td>{{class.Name}}</td>
+        <td>
+            <input id="Submit1" type="submit" value="修改" (click)="modify(class)" />
+        </td>
+    </tr>
+</table>-->

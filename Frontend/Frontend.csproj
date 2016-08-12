@@ -92,8 +92,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.component.html" />
-    <Content Include="app\sample\sample.component.css" />
-    <Content Include="app\sample\sample.component.html" />
+    <Content Include="app\member\memberRoot\memberRoot.component.css" />
+    <Content Include="app\member\memberRoot\memberRoot.component.html" />
+    <Content Include="app\member\memberAction\memberAction.component.css" />
+    <Content Include="app\member\memberAction\memberAction.component.html" />
+    <Content Include="app\member\memberList\memberList.component.css" />
+    <Content Include="app\member\memberList\memberList.component.html" />
+    <Content Include="app\class\classAction\classAction.component.css" />
+    <Content Include="app\class\classAction\classAction.component.html" />
+    <Content Include="app\class\classList\classList.component.css" />
+    <Content Include="app\class\classList\classList.component.html" />
     <Content Include="bootstrap.min.css" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
@@ -135,9 +143,26 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
+    <TypeScriptCompile Include="app\app.routes.ts" />
+    <TypeScriptCompile Include="app\can-deactivate-guard.service.ts" />
+    <TypeScriptCompile Include="app\Class.ts" />
+    <TypeScriptCompile Include="app\dialog.service.ts" />
+    <TypeScriptCompile Include="app\memberSex.pipe.ts" />
+    <TypeScriptCompile Include="app\member\member.routes.ts" />
+    <TypeScriptCompile Include="app\member\memberRoot\index.ts" />
+    <TypeScriptCompile Include="app\member\memberRoot\memberRoot.component.ts" />
+    <TypeScriptCompile Include="app\member\memberAction\index.ts" />
+    <TypeScriptCompile Include="app\member\memberAction\memberAction.component.ts" />
+    <TypeScriptCompile Include="app\member\memberList\memberList.component.ts" />
+    <TypeScriptCompile Include="app\member\memberList\index.ts" />
+    <TypeScriptCompile Include="app\class\class.routes.ts" />
+    <TypeScriptCompile Include="app\class\classAction\index.ts" />
+    <TypeScriptCompile Include="app\class\classAction\classAction.component.ts" />
+    <TypeScriptCompile Include="app\common.service.ts" />
     <TypeScriptCompile Include="app\main.ts" />
-    <TypeScriptCompile Include="app\sample\index.ts" />
-    <TypeScriptCompile Include="app\sample\sample.component.ts" />
+    <TypeScriptCompile Include="app\class\classList\index.ts" />
+    <TypeScriptCompile Include="app\class\classList\classList.component.ts" />
+    <TypeScriptCompile Include="app\Member.ts" />
     <TypeScriptCompile Include="typings\globals\angular-protractor\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\core-js\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jasmine\index.d.ts" />

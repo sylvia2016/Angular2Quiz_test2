@@ -9,25 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var dialog_service_1 = require('./dialog.service');
-var AppComponent = (function () {
-    function AppComponent() {
+/*
+ * Raise the value exponentially
+ * Takes an exponent argument that defaults to 1.
+ * Usage:
+ *   value | exponentialStrength:exponent
+ * Example:
+ *   {{ 2 |  exponentialStrength:10}}
+ *   formats to: 1024
+*/
+var memberSexPipe = (function () {
+    function memberSexPipe() {
     }
-    AppComponent.prototype.ngOnInit = function () {
+    memberSexPipe.prototype.transform = function (value, exponent) {
+        var exp = parseFloat(exponent);
+        return Math.pow(value, isNaN(exp) ? 1 : exp);
     };
-    AppComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'my-app',
-            templateUrl: 'app.component.html',
-            //template: '<h1>My First Angular 2 App</h1><app-sample></app-sample>',
-            providers: [dialog_service_1.DialogService],
-            directives: [router_1.ROUTER_DIRECTIVES]
-        }), 
+    memberSexPipe = __decorate([
+        core_1.Pipe({ name: 'exponentialStrength' }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], memberSexPipe);
+    return memberSexPipe;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.memberSexPipe = memberSexPipe;
+//# sourceMappingURL=memberSex.pipe.js.map
