@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Class } from '../../Class';
 import { CommonService }  from '../../common.service';
 import { Router, ActivatedRoute }  from '@angular/router';
-import { NgForm } from '@angular/forms';
+import { NgForm, REACTIVE_FORM_DIRECTIVES, FormGroup, FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/fromPromise';
 import { DialogService } from '../../dialog.service';
